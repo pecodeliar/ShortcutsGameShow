@@ -42,9 +42,13 @@ def main() -> None:
                 question, command = question_generator(
                     list(mode.commands[topic].items())
                 )
+                if "control" in command:
+                    command = command.replace("control", "ctrl")
+
                 print(f"Answer for video demo: {command}")
                 print(question)
                 answer = input().lower().replace(" ", "").strip()
+
                 if answer == command.strip():
                     print("You got it!")
                     correct += 1
