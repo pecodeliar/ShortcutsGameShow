@@ -182,7 +182,7 @@ def ask_user_system() -> str:
             system = input(
                 "Which system would you like to be tested on? Windows, Mac or Linux? "
             )
-            if system not in ["windows", "linux", "mac"]:
+            if system.lower() not in ["windows", "linux", "mac"]:
                 raise InvalidChoiceError("Invalid system")
             return system
         except InvalidChoiceError as e:
